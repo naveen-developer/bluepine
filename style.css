@@ -1,0 +1,1109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", serif;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    /* Initially hide it off-screen */
+    left: 10px;
+    background-color: #00607D;
+    ;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 10px;
+    outline-offset: 2px;
+    /* Make it visible when focused */
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Basic navigation styles */
+.logo-section a {
+    outline-offset: -3px;
+}
+
+ul {
+    list-style: none;
+    background-color: white;
+    color: black;
+}
+
+ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.dropdown li:hover a {
+    font-weight: bold;
+}
+
+.nav-active a {
+    color: #00607D;
+}
+
+.dropdown {
+    display: none;
+}
+
+.nav-active .dropdown {
+    display: block;
+    position: absolute;
+    margin: 12px 0 0 0;
+}
+
+.nav-active .arrow-icon i {
+    transform: rotate(180deg);
+}
+
+.dropdown ul li {
+    display: block;
+}
+
+ul a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    outline-offset: 8px;
+}
+
+.action-element-section ul li {
+    position: relative;
+}
+
+.count {
+    background: #00607D;
+    position: absolute;
+    top: 5px;
+    left: 24px;
+    border-radius: 50%;
+    padding: 1px 3px;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.action-element-section ul li::after {
+    content: "\2502";
+    top: 12px;
+    position: absolute;
+    left: -8px;
+    opacity: 0.5;
+}
+
+.action-element-section ul li:first-child::after {
+    content: '';
+}
+
+.action-element-section ul li:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.action-element-section svg {
+    width: 25px;
+    height: 25px;
+}
+
+/* Slider css start */
+.carousel-container {
+    position: relative;
+    height: 35rem;
+    z-index: 0;
+    background-color: lightgrey;
+}
+
+.carousel-container .controls button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.carousel-container .controls button:focus,
+.carousel-container .three-dots span:focus {
+    outline: 3px solid white;
+    outline-offset: 2px;
+}
+
+.carousel-container .carousel-images {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-container .carousel-inner {
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-container .carousel-inner img {
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-container .carousel-images {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.carousel-container .carousel-image,
+.carousel-container .carousel-content .content {
+    display: none;
+}
+
+.carousel-container .carousel-image.active,
+.carousel-container .carousel-content .content.active {
+    display: block;
+}
+
+.carousel-container .controls .previousBtn {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+}
+
+.carousel-container .controls .nextBtn {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+}
+
+.carousel-container .controls .pauseBtn {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+
+.carousel-container .three-dots span {
+    display: inline-block;
+    background: #424242;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin: 0 3px;
+}
+
+.carousel-container .three-dots {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    cursor: pointer;
+}
+
+.carousel-container .three-dots span:hover {
+    background-color: #d5d5d5;
+}
+
+.carousel-container .three-dots span.active {
+    background-color: #d5d5d5;
+}
+
+.carousel-container .carousel-content {
+    position: absolute;
+    color: #ffffff;
+    top: 50%;
+    left: 25%;
+    right: 25%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.carousel-container .carousel-content h2 {
+    font-size: 3rem;
+}
+
+.carousel-container .carousel-content p {
+    font-size: 1rem;
+}
+
+/* Slider css end */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+/* wave heighlight style start */
+h2.wave-heading {
+    font-size: 32px;
+    position: relative;
+    /* Position relative to allow absolute positioning of the wave */
+    line-height: 1.2;
+}
+
+.etheme-headline-text-before {
+    font-weight: normal;
+    color: #333;
+    display: inline-block;
+}
+
+.etheme-headline-text-wrapper {
+    display: inline-block;
+    /* Ensures text and wave are aligned properly */
+    position: relative;
+    /* Create a context for absolute positioning */
+}
+
+.wave-path {
+    fill: transparent;
+    stroke: #00607D;
+    /* Color of the wave line */
+    stroke-width: 4;
+    stroke-dasharray: 1000;
+    /* Ensures that the path is initially not visible */
+    stroke-dashoffset: 1000;
+    /* Initially hides the path */
+    animation: draw-wave 3s ease infinite;
+    /* Animation to draw the path */
+}
+
+@keyframes draw-wave {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Optional: Add style for SVG positioning */
+.etheme-headline-text-wrapper svg {
+    position: absolute;
+    bottom: -10px;
+    /* Moves the wave below the text */
+    left: 0;
+    width: 100%;
+    /* Makes the wave stretch across the full width */
+    height: auto;
+}
+
+/* Optional: Ensure the wave fits under the text nicely */
+h2.wave-heading {
+    padding-bottom: 20px;
+    /* Adds space between the text and the wave */
+}
+
+/* wave heighlight style end */
+
+.container .sub-container {
+    max-width: 70rem;
+    margin: 5rem auto;
+    text-align: center;
+}
+
+.container p {
+    color: #54595F;
+    margin: 1rem 0;
+}
+
+.container h3 {
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.container .video-section {
+    margin: 1rem;
+}
+
+
+.video-section-container {
+    width: 100%;
+    text-align: center;
+    background: #F1F1F1;
+}
+
+.video-section-container .video-section {
+    position: relative;
+    height: 23rem;
+}
+
+.video-section-container .video-section iframe {
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+}
+
+.video-section-container .video-section p {
+    position: absolute;
+    text-align: center;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: #54595F;
+}
+
+.empty-container {
+    height: 13rem;
+}
+
+.brand-logos {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* on hover link button start */
+/* Style for the button link */
+.fill-ltr {
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 3rem 0;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    overflow: hidden;
+    transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Create the left-to-right fill effect with the ::before pseudo-element */
+.fill-ltr::before {
+    content: '';
+    /* Empty content to create the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: -100%;
+    /* Initially off-screen to the left */
+    width: 100%;
+    height: 100%;
+    background-color: #00607D;
+    /* The background color on hover */
+    transition: left 0.4s ease;
+    /* Smooth transition when moving to the right */
+}
+
+/* On hover, animate the pseudo-element to fill from left to right */
+.fill-ltr:hover::before,
+.fill-ltr:focus::before {
+    left: 0;
+    /* Move the pseudo-element to fill the button */
+}
+
+/* Change the text color and border color on hover */
+.fill-ltr:hover,
+.fill-ltr:focus {
+    color: white;
+    /* Text color turns white */
+    border-color: #00607D;
+    /* Border color turns to skyblue */
+}
+
+/* Style for the text and icon inside the button */
+.elementor-button-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Ensure the text and icon are above the pseudo-element */
+}
+
+.elementor-button-text {
+    margin-right: 10px;
+    /* Space between the text and the icon */
+}
+
+/* Optional: Style for the icon */
+.elementor-button-icon svg {
+    margin-top: 5px;
+    fill: currentColor;
+    /* Icon inherits the text color */
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+    /* Smooth transition for the icon */
+}
+
+/* Icon hover effect (optional) */
+.fill-ltr:hover .elementor-button-icon svg {
+    transform: translateX(5px);
+    /* Slightly move the icon on hover */
+}
+
+/* on hover link button end */
+.food-handcraft .wave-path {
+    stroke-width: 7px;
+}
+
+.wave-path {
+    stroke-width: 10px;
+}
+
+
+
+/* slide card start */
+.cards-section {
+    display: flex;
+}
+
+.card,
+.slide-card {
+    border: 1px solid #b9b9b9;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 35rem;
+    height: 25rem;
+    padding: 2rem;
+    position: relative;
+    /* Needed to control card stacking */
+    overflow: hidden;
+    /* Hide the slide card initially */
+}
+
+.card p,
+.slide-card p {
+    line-height: 1.6em;
+}
+
+.slide-card {
+    background-color: #00607D;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    /* Start off the left side */
+    width: 100%;
+    /* Make sure the slide card covers the whole width of the card */
+    height: 100%;
+    /* Fill the entire height of the card */
+    transition: transform 0.5s ease-in-out;
+    /* Smooth transition */
+    align-content: center;
+}
+
+.slide-card p {
+    color: #ffffff;
+    padding-bottom: 1rem;
+}
+
+.slide-card a {
+    border: 1px solid #ffffff;
+    padding: 1rem 2rem;
+    background: #ffffff;
+    color: #00607D;
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+.cards-section .card1,
+.cards-section .card2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.cards-section .card1 {
+    left: 0px;
+}
+
+.cards-section .card1:focus,
+.cards-section .card2:focus {
+    outline-offset: 2px;
+}
+
+.cards-section .card2 {
+    right: -30px;
+}
+
+.cards-section .card1:hover .slide-card,
+.cards-section .card1.active .slide-card,
+.cards-section .card2:hover .slide-card,
+.cards-section .card2.active .slide-card {
+    transform: translateX(100%);
+}
+
+/* slide card end */
+
+
+.our-products-container h3 {
+    margin: 0.5rem 0;
+}
+
+.our-products-container .cards {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.our-products-container .cards .card1,
+.our-products-container .cards .card2,
+.our-products-container .cards .card3,
+.our-products-container .cards .card4,
+.our-products-container .cards .card5 {
+    width: 18rem;
+    height: 36rem;
+    position: relative;
+}
+
+.our-products-container .cards .sub-content {
+    position: absolute;
+    bottom: 0;
+}
+
+.our-products-container .cards img {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.quantity-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+}
+
+.quantity {
+    border: 1px solid black;
+    width: 5rem;
+    text-align: center;
+}
+
+.quantity span {
+    cursor: pointer;
+    text-align: center;
+    padding: 3px 4px;
+}
+
+.quantity span:focus {
+    outline-offset: 3px;
+}
+
+.quantity input {
+    width: 2rem;
+    height: 1.7rem;
+    text-align: center;
+    border-bottom: none;
+    border-top: none;
+}
+
+.our-products-container .cards .content {
+    text-align: left;
+}
+
+.our-products-container .cards .content p {
+    color: #6E6E6E;
+}
+
+.cartBtn {
+    width: 2.5rem;
+    height: 2rem;
+    font-size: 1rem;
+    background-color: #00607D;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.cartBtn:focus {
+    outline-offset: 3px;
+}
+
+.our-products-container .cards .price {
+    color: #00607D !important;
+}
+
+
+
+.carousel-products.carousel-container .carousel-inner img {
+    height: 100%;
+    width: unset;
+}
+
+.carousel-inner-product {
+    display: none;
+}
+
+.carousel-inner-product.active {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.carousel-products .card1,
+.carousel-products .card2,
+.carousel-products .card3,
+.carousel-products .card4,
+.carousel-products .card5,
+.carousel-products .card6,
+.carousel-products .card7,
+.carousel-products .card8 {
+    width: 18rem;
+    height: 38rem !important;
+    position: relative;
+    margin: 0 2rem;
+}
+
+.carousel-container.carousel-products {
+    background-color: transparent;
+    margin-top: 15rem;
+    margin-bottom: 15rem;
+}
+
+.carousel-products .sub-content p,
+.carousel-products .sub-content .rating {
+    margin-bottom: 1rem;
+}
+
+.carousel-products h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.carousel-products .controls button:focus {
+    outline: 3px solid #24a5cd;
+    outline-offset: 2px;
+}
+
+.carousel-products .title {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 5px;
+    margin-top: 0.5rem;
+    color: #6E6E6E;
+}
+
+
+.carousel-products .wave-heading {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.background-image-content {
+    background-image: url(./images/background-image.jpg);
+    background-attachment: fixed;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+.background-image-content .etheme-headline-text-before {
+    color: #ffffff;
+}
+
+.bg-image-content {
+    max-width: 40rem;
+    margin: auto;
+    line-height: 1.9rem;
+}
+
+.bg-image-content .strong-content {
+    margin: 2rem 1rem;
+}
+
+.bg-image-content button {
+    padding: 1rem 3rem;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.bg-image-controls button:first-child {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #ffffff;
+}
+
+.bg-image-controls button:last-child {
+    border-color: #ffffff;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.bg-image-controls button:last-child:focus {
+    outline-offset: 4px;
+}
+
+.carousel-products.carousel-container.blog-container .carousel-inner img {
+    width: 100%;
+}
+
+.carousel-products.blog-container .card1,
+.carousel-products.blog-container .card2,
+.carousel-products.blog-container .card3,
+.carousel-products.blog-container .card4,
+.carousel-products.blog-container .card5,
+.carousel-products.blog-container .card6,
+.carousel-products.blog-container .card7,
+.carousel-products.blog-container .card8 {
+    width: 23rem;
+    height: 28rem !important;
+    position: relative;
+    margin: 0 2rem;
+}
+
+.carousel-products.blog-container .title a {
+    background: #00607D;
+    border-radius: 5px;
+    padding: 3px 4px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.carousel-products.blog-container .title a:hover,
+.carousel-products.blog-container .sub-content a:hover {
+    text-decoration: underline;
+}
+
+.carousel-products.blog-container .title a:focus,
+.carousel-products.blog-container .sub-content a:focus {
+    outline-offset: 2px;
+    text-decoration: underline;
+}
+
+.carousel-products.blog-container .sub-content a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.carousel-products.blog-container .sub-content a span {
+    margin-left: 10px;
+}
+
+.carousel-inner-product .picture {
+    overflow: hidden;
+}
+
+.carousel-inner-product .picture img {
+    transition: transform 0.5s ease;
+    /* Add transition for smooth scaling */
+}
+
+.carousel-inner-product .picture img:hover {
+    transform: scale(1.2);
+}
+
+footer {
+    background-color: #F1F1F1;
+}
+
+.footer-section {
+    max-width: 90rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.footer-section p,
+.footer-section li {
+    color: #3B3B3B;
+    line-height: 1.6rem;
+}
+
+.footer-section .left-section {
+    max-width: 32rem;
+    border-right: 1px solid gray;
+}
+
+.footer-section .right-section {
+    display: flex;
+}
+
+.footer-section .right-section>div {
+    margin: 0 1rem;
+}
+
+.footer-section .right-section h2 {
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.footer-section .right-section ul li {
+    display: block;
+    background-color: #F1F1F1;
+    padding: 5px;
+}
+
+.footer-section .right-section ul li a {
+    font-weight: 400;
+}
+
+.footer-section .right-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-section .right-section .input-Btn {
+    margin: 2rem 0;
+}
+
+.footer-section .right-section .email {
+    width: 10rem;
+    height: 2rem;
+    padding: 0.5rem;
+}
+
+.footer-section .right-section .submitBtn {
+    background-color: #0E3F4E;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-section .right-section .submitBtn:focus {
+    outline-offset: 4px;
+}
+
+.footer-section .right-section .social-media i {
+    font-size: 26px;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.footer-section .right-section .social-media .fa-square-facebook:hover {
+    color: #1773EA
+}
+
+.footer-section .right-section .social-media .fa-square-instagram:hover {
+    color: #C13584;
+}
+
+.footer-section .right-section .social-media .fa-linkedin:hover {
+    color: #0077B5
+}
+
+footer .contact-phone {
+    margin: 2rem 0;
+}
+
+footer .phone-icon {
+    font-size: 2rem;
+    color: #0E3F4E;
+    margin-top: 7px;
+}
+
+footer .fa-phone {
+    margin-right: 1rem;
+}
+
+.footer-copyright-text {
+    height: 4rem;
+    text-align: center;
+    border-top: 1px solid gray;
+    align-content: center;
+}
+
+.footer-copyright-text a {
+    color: #00607D;
+    text-decoration: none;
+}
+
+.footer-copyright-text a:hover {
+    text-decoration: underline;
+}
+
+/*Responsiveness*/
+@media only screen and (max-width: 1425px) {
+    .opc.carousel-container {
+        height: 70rem;
+    }
+
+    .carousel-inner-product.active {
+        flex-wrap: wrap;
+        gap: 3rem 1rem;
+    }
+}
+
+@media only screen and (max-width: 1345px) {
+    .blog-container.carousel-container {
+        height: 50rem;
+    }
+
+    header .action-element-section {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 1221px) {
+    .video-section-container .video-section iframe {
+        width: 700px;
+        height: 400px;
+    }
+
+    .food-handcraft .brand-logos {
+        flex-wrap: wrap;
+    }
+
+    .our-brands-container .cards-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem 1rem;
+    }
+
+    .our-brands-container .cards-section .card2 {
+        right: 0px;
+    }
+
+    .footer-section {
+        flex-wrap: wrap;
+        gap: 2rem 1rem;
+    }
+
+    .footer-section .left-section {
+        border-right: none;
+    }
+
+    .footer-section .left-section {
+        max-width: 50rem;
+    }
+}
+
+@media only screen and (max-width: 897px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .container .sub-container {
+        padding: 0 2rem;
+    }
+
+    .blog-container.carousel-container {
+        height: 80rem;
+    }
+}
+
+@media only screen and (max-width: 736px) {
+    .carousel-container .carousel-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .carousel-container .carousel-content {
+        position: absolute;
+        top: 37%;
+    }
+
+    .opc.carousel-container {
+        height: 150rem;
+    }
+
+    .video-section-container .video-section iframe {
+        width: 500px;
+        height: 270px;
+    }
+
+    .carousel-products .wave-heading {
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .carousel-container.carousel-products {
+        margin-top: 7rem;
+    }
+
+}
+
+@media only screen and (max-width: 723px) {
+    .carousel-products .wave-heading {
+        position: absolute;
+        top: -1%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+
+    .our-brands-container .card,
+    .our-brands-container .slide-card {
+        border: 1px solid #b9b9b9;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 28rem;
+        height: 23rem;
+        padding: 2rem;
+    }
+
+    .our-brands-container .card img {
+        width: 7rem;
+    }
+
+    .our-brands-container .slide-card a {
+        padding: 0.5rem 2rem;
+    }
+
+    .footer-section .right-section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer-section .right-section h2 {
+        font-weight: 500;
+        margin: 1rem 0 0.3rem;
+    }
+
+    .footer-section .right-section ul li {
+        padding: 3px;
+    }
+}
+
+
+@media only screen and (max-width: 528px) {
+
+    .our-brands-container .card,
+    .our-brands-container .slide-card {
+        border: 1px solid #b9b9b9;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 20rem;
+        height: 30rem;
+        padding: 2rem;
+    }
+
+    .video-section-container .video-section iframe {
+        width: 400px;
+        height: 230px;
+    }
+
+    .carousel-container .carousel-content {
+        position: absolute;
+        top: 30%;
+    }
+
+    .footer-copyright-text p {
+        line-height: 1.4rem;
+    }
+}
